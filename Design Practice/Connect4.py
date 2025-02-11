@@ -35,7 +35,7 @@ class Grid:
 
     def checkWin(self, connectN, row, col, piece):
         count = 0
-        # Check horizontal
+        
         for c in range(self._columns):
             if self._grid[row][c] == piece:
                 count += 1
@@ -44,7 +44,6 @@ class Grid:
             if count == connectN:
                 return True
 
-        # Check vertical
         count = 0
         for r in range(self._rows):
             if self._grid[r][col] == piece:
@@ -54,7 +53,6 @@ class Grid:
             if count == connectN:
                 return True
 
-        # Check diagonal
         count = 0
         for r in range(self._rows):
             c = row + col - r
@@ -65,7 +63,6 @@ class Grid:
             if count == connectN:
                 return True
 
-        # Check anti-diagonal
         count = 0
         for r in range(self._rows):
             c = col - row + r
